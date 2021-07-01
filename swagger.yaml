@@ -1,0 +1,210 @@
+swagger: "2.0"
+info:
+  description: defaultDescription
+  version: "0.1"
+  title: defaultTitle
+
+schemes:
+  - http
+
+host: localhost:3000
+
+paths:
+  /cart/{cartId}:
+    delete:
+      consumes:
+        - application/json
+      produces:
+        - text/html
+      parameters:
+        - in: body
+          name: body
+          required: false
+          schema:
+            $ref: "#/definitions/Model1"
+          x-examples:
+            application/json: |2
+
+                    {
+                      "user_id": 6,
+                      "product_id": 1
+                    }
+      responses:
+        "500":
+          description: Definition generated from Swagger Inspector
+          schema:
+            type: string
+  /cart/5/checkout:
+    get:
+      produces:
+        - application/json
+      parameters: []
+      responses:
+        "200":
+          description: Definition generated from Swagger Inspector
+          schema:
+            $ref: "#/definitions/Model6"
+    post:
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: false
+          schema:
+            $ref: "#/definitions/Model5"
+          x-examples:
+            application/json: |2
+
+                    {
+                      "user_id": 6,
+                      "product_id": 1
+                    }
+      responses:
+        "201":
+          description: Definition generated from Swagger Inspector
+          schema:
+            $ref: "#/definitions/Model7"
+  /cart:
+    post:
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: false
+          schema:
+            $ref: "#/definitions/Model0"
+          x-examples:
+            application/json: |2
+
+                    {
+                      "quantity": 2,
+                      "user_id": 6,
+                      "product_id": 1
+                  }
+      responses:
+        "201":
+          description: Definition generated from Swagger Inspector
+          schema:
+            $ref: "#/definitions/Model8"
+  /auth/login:
+    post:
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: false
+          schema:
+            $ref: "#/definitions/Model2"
+          x-examples:
+            application/json: |2
+
+                    {
+                      "user_name": "gymRat3",
+                      "password": "swaggerAPi"
+                  }
+      responses:
+        "200":
+          description: Definition generated from Swagger Inspector
+          schema:
+            $ref: "#/definitions/Model14"
+  /auth/signup:
+    post:
+      consumes:
+        - application/json
+      produces:
+        - text/html
+      parameters:
+        - in: body
+          name: body
+          required: false
+          schema:
+            $ref: "#/definitions/Model3"
+          x-examples:
+            application/json: |2
+
+                    {
+                      "user_name": "gymRat3",
+                      "password": "swaggerAPi",
+                      "email": "gymrat@test.com"
+                  }
+      responses:
+        "200":
+          description: Definition generated from Swagger Inspector
+          schema:
+            type: string
+  /users/5:
+    put:
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: false
+          schema:
+            $ref: "#/definitions/Model4"
+          x-examples:
+            application/json: |-
+              {
+                  "email": "beast@test.com"
+              }
+      responses:
+        "200":
+          description: Definition generated from Swagger Inspector
+          schema:
+            $ref: "#/definitions/Model15"
+  "/{param3}/{param4}":
+    get:
+      produces:
+        - application/json
+      parameters:
+        - name: param3
+          in: path
+          description: "Example values form path are: 'users' and 'param1'"
+          required: true
+          type: string
+        - name: param4
+          in: path
+          description: "Example values form path are: '5' and '1'"
+          required: true
+          type: string
+      responses:
+        "200":
+          description: Definition generated from Swagger Inspector
+          schema:
+            $ref: "#/definitions/Model16"
+  "/{param5}":
+    get:
+      produces:
+        - application/json
+        - text/html
+      parameters:
+        - name: param0
+          in: path
+          description: "Example values form path are: 'cart' and 'orders'"
+          required: true
+          type: string
+        - name: param5
+          in: path
+          description: "Example values form path are: 'param0' and 'param2'"
+          required: true
+          type: string
+      responses:
+        "200":
+          description: Definition generated from Swagger Inspector
+          schema:
+            $ref: "#/definitions/Model9"
+        "500":
+          description: Definition generated from Swagger Inspector
+          schema:
+            type: string
